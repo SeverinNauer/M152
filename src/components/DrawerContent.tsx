@@ -29,7 +29,14 @@ const MenuItems: ReadonlyArray<MenuItem> = [
   },
   { Name: "Urheberrecht", Selected: false },
   { Name: "Dateiformate", Selected: false },
-  { Name: "Animationen", Selected: false },
+  {
+    Name: "Animationen",
+    Selected: false,
+    SubItems: [
+      { Name: "CSS Animation", Selected: false },
+      { Name: "SVG Animation", Selected: false },
+    ],
+  },
   { Name: "Automatisierung", Selected: false },
   { Name: "Testen", Selected: false },
   { Name: "Eigene Entwicklung", Selected: false },
@@ -84,8 +91,8 @@ const DrawerContent = () => {
           : { ...item }
       )
     );
-  // TODO Clean up functionality
-  // eslint-disable-next-line react-hooks/exhaustive-deps 
+    // TODO Clean up functionality
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const setExpanded = (item: MenuItem) => (expanded: boolean) => {

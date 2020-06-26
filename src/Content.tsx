@@ -3,6 +3,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { drawerWidth } from "./App";
 import Index from "./pages/Index";
+import CssAnimations from "./pages/animations/CssAnimations";
+import SvgAnimations from "./pages/animations/SvgAnimations";
 
 const ContentBox = styled("div")(({ theme }) => ({
   width: `calc(100% - ${drawerWidth}px)`,
@@ -19,6 +21,12 @@ const Content = () => {
       <Switch>
         <Route exact path="/">
           <Index />
+        </Route>
+        <Route exact path="/Animationen/CSS Animation">
+          <CssAnimations />
+        </Route>
+        <Route exact path="/Animationen/SVG Animation">
+          <SvgAnimations />
         </Route>
       </Switch>
     </ContentBox>
