@@ -1,27 +1,24 @@
 import {
   AppBar,
   createStyles,
+  Drawer,
   fade,
   Hidden,
   IconButton as MuiIconButton,
   makeStyles,
   styled,
+  Theme,
   Toolbar,
   Typography,
-  Drawer,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Divider,
+  useMediaQuery,
 } from "@material-ui/core";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import MenuIcon from "@material-ui/icons/Menu";
-import React from "react";
+import React, { useState } from "react";
+import DrawerContent from "./components/DrawerContent";
 import SearchInput from "./components/SearchInput";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import Content from './Content';
 
 const Root = styled("div")({
   height: "100%",
@@ -36,7 +33,7 @@ const Box = styled("div")({
   display: "flex",
 });
 
-const drawerWidth = 240;
+export const drawerWidth = 240;
 const useStyles = makeStyles((theme) =>
   createStyles({
     search: {
@@ -78,18 +75,22 @@ const useStyles = makeStyles((theme) =>
     },
     drawerPaper: {
       width: drawerWidth,
-    },
-    drawerContainer: {
-      overflow: "auto",
+      boxShadow: `5px 5px 5px ${theme.palette.divider}`,
+      border: "none",
     },
     appbar: {
       zIndex: theme.zIndex.drawer + 1,
+      [theme.breakpoints.down("sm")]: {
+        zIndex: theme.zIndex.modal + 1,
+      },
     },
   })
 );
 
 const App = () => {
   const classes = useStyles();
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
   return (
     <Root>
       <AppBar className={classes.appbar} position="fixed" color="primary">
@@ -100,6 +101,7 @@ const App = () => {
                 className={classes.menuButton}
                 aria-label="Menu"
                 color="inherit"
+                onClick={() => setMenuIsOpen(!menuIsOpen)}
               >
                 <MenuIcon />
               </IconButton>
@@ -127,34 +129,14 @@ const App = () => {
       </AppBar>
       <Drawer
         className={classes.drawer}
-        variant="permanent"
+        variant={smDown ? "temporary" : "persistent"}
         classes={{ paper: classes.drawerPaper }}
+        open={menuIsOpen || !smDown}
       >
         <Toolbar />
-        <div className={classes.drawerContainer}>
-          <List>
-            {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
-          <List>
-            {["All mail", "Trash", "Spam"].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-        </div>
+        <DrawerContent />
       </Drawer>
+      <Content />
     </Root>
   );
 };
