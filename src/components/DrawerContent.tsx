@@ -9,40 +9,7 @@ import {
 import React, { useEffect, useState, useCallback } from "react";
 import { Link, LinkProps, useHistory } from "react-router-dom";
 import { Location } from "history";
-
-type MenuItem = {
-  readonly Name: string;
-  readonly SubItems?: ReadonlyArray<MenuItem>;
-  readonly Selected: boolean;
-  readonly Expanded?: boolean;
-};
-
-const MenuItems: ReadonlyArray<MenuItem> = [
-  {
-    Name: "Konzept",
-    Selected: false,
-    SubItems: [
-      { Name: "Mockup", Selected: false },
-      { Name: "Style Guide", Selected: false },
-      { Name: "Zeitplan", Selected: false },
-    ],
-  },
-  { Name: "Urheberrecht", Selected: false,SubItems: [{ Name: "Impressum", Selected: false }] },
-  { Name: "Dateiformate", Selected: false },
-  {
-    Name: "Animationen",
-    Selected: false,
-    SubItems: [
-      { Name: "CSS Animation", Selected: false },
-      { Name: "SVG Animation", Selected: false },
-      { Name: "Scroll Activated", Selected: false },
-    ],
-  },
-  { Name: "Automatisierung", Selected: false },
-  { Name: "Testen", Selected: false },
-  { Name: "Eigene Entwicklung", Selected: false },
-  { Name: "Allgemeines", Selected: false },
-];
+import { MenuItems, MenuItem } from "../Content";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -123,7 +90,7 @@ const DrawerContent = () => {
                       key={index}
                       primary={subItem.Name}
                       className={classes.nested}
-                      to={`/${item.Name}/${subItem.Name}`}
+                      to={`/${item.Route}/${subItem.Route}`}
                     />
                   ))}
                 </List>

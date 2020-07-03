@@ -7,6 +7,7 @@ import CssAnimations from "./pages/animations/CssAnimations";
 import SvgAnimations from "./pages/animations/SvgAnimations";
 import ScrollActivated from "./pages/animations/SrollActivated";
 import Impressum from "./pages/copyright/Impressum";
+import HtmlCanvas from "./pages/animations/HtmlCanvas";
 
 const ContentBox = styled("div")(({ theme }) => ({
   width: `calc(100% - ${drawerWidth}px)`,
@@ -15,6 +16,75 @@ const ContentBox = styled("div")(({ theme }) => ({
     width: "100%",
   },
 }));
+export type MenuItem = {
+  readonly Name: string;
+  readonly SubItems?: ReadonlyArray<MenuItem>;
+  readonly Selected: boolean;
+  readonly Expanded?: boolean;
+  readonly Route?: string;
+  readonly Component?: () => JSX.Element;
+};
+export const MenuItems: ReadonlyArray<MenuItem> = [
+  {
+    Name: "Konzept",
+    Selected: false,
+    Route: "concept",
+    SubItems: [
+      { Name: "Mockup", Selected: false, Route: "mock" },
+      { Name: "Style Guide", Selected: false, Route: "style-guide" },
+      { Name: "Zeitplan", Selected: false, Route: "timeline" },
+    ],
+  },
+  {
+    Name: "Urheberrecht",
+    Selected: false,
+    Route: "copyright",
+    SubItems: [
+      {
+        Name: "Impressum",
+        Selected: false,
+        Route: "impressum",
+        Component: Impressum,
+      },
+    ],
+  },
+  { Name: "Dateiformate", Selected: false },
+  {
+    Name: "Animationen",
+    Selected: false,
+    Route: "animations",
+    SubItems: [
+      {
+        Name: "CSS Animation",
+        Selected: false,
+        Route: "css",
+        Component: CssAnimations,
+      },
+      {
+        Name: "SVG Animation",
+        Selected: false,
+        Route: "svg",
+        Component: SvgAnimations,
+      },
+      {
+        Name: "Scroll Activated",
+        Selected: false,
+        Route: "scroll-activated",
+        Component: ScrollActivated,
+      },
+      {
+        Name: "HTML Canvas",
+        Selected: false,
+        Route: "canvas",
+        Component: HtmlCanvas,
+      },
+    ],
+  },
+  { Name: "Automatisierung", Selected: false },
+  { Name: "Testen", Selected: false },
+  { Name: "Eigene Entwicklung", Selected: false },
+  { Name: "Allgemeines", Selected: false },
+];
 
 const Content = () => {
   return (
@@ -24,18 +94,15 @@ const Content = () => {
         <Route exact path="/">
           <Index />
         </Route>
-        <Route exact path="/Animationen/CSS Animation">
-          <CssAnimations />
-        </Route>
-        <Route exact path="/Animationen/SVG Animation">
-          <SvgAnimations />
-        </Route>
-        <Route exact path="/Animationen/Scroll Activated">
-          <ScrollActivated />
-        </Route>
-        <Route exact path="/Urheberrecht/Impressum">
-          <Impressum />
-        </Route>
+        {MenuItems.map((item) =>
+          item.SubItems?.map((subItem) => (
+            <Route
+              exact
+              path={`/${item.Route}/${subItem.Route}`}
+              component={subItem.Component}
+            />
+          ))
+        )}
       </Switch>
     </ContentBox>
   );

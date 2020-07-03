@@ -1,12 +1,10 @@
 import {
-    Card, createStyles, makeStyles,
-
-
-
-
-    Slide, Typography,
-
-    useScrollTrigger
+  Card,
+  createStyles,
+  makeStyles,
+  Slide,
+  Typography,
+  useScrollTrigger,
 } from "@material-ui/core";
 import React, { useState } from "react";
 import ContentBox from "../../components/ContentBox";
@@ -28,7 +26,7 @@ const useStyles = makeStyles((theme) =>
     boxContent: {
       height: 800,
       width: "100%",
-      textAlign: "center"
+      textAlign: "center",
     },
     hello: {
       marginTop: 300,
