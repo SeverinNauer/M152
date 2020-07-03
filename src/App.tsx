@@ -16,9 +16,10 @@ import Brightness4Icon from "@material-ui/icons/Brightness4";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import DrawerContent from "./components/DrawerContent";
 import SearchInput from "./components/SearchInput";
-import Content from './Content';
+import Content from "./Content";
 
 const Root = styled("div")({
   height: "100%",
@@ -84,6 +85,11 @@ const useStyles = makeStyles((theme) =>
         zIndex: theme.zIndex.modal + 1,
       },
     },
+    homeLink: {
+      textDecoration: "none",
+      color: theme.palette.primary.contrastText,
+      display: "inherit",
+    },
   })
 );
 
@@ -106,9 +112,11 @@ const App = () => {
                 <MenuIcon />
               </IconButton>
             </Hidden>
-            <Typography className={classes.title} variant="h6">
-              Modul 152 Showcase
-            </Typography>
+            <Link to="/" className={classes.homeLink}>
+              <Typography className={classes.title} variant="h6">
+                Modul 152 Showcase
+              </Typography>
+            </Link>
           </Box>
           <Box>
             <Hidden smDown>

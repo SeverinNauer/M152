@@ -27,7 +27,7 @@ const MenuItems: ReadonlyArray<MenuItem> = [
       { Name: "Zeitplan", Selected: false },
     ],
   },
-  { Name: "Urheberrecht", Selected: false },
+  { Name: "Urheberrecht", Selected: false,SubItems: [{ Name: "Impressum", Selected: false }] },
   { Name: "Dateiformate", Selected: false },
   {
     Name: "Animationen",
@@ -35,13 +35,13 @@ const MenuItems: ReadonlyArray<MenuItem> = [
     SubItems: [
       { Name: "CSS Animation", Selected: false },
       { Name: "SVG Animation", Selected: false },
+      { Name: "Scroll Activated", Selected: false },
     ],
   },
   { Name: "Automatisierung", Selected: false },
   { Name: "Testen", Selected: false },
   { Name: "Eigene Entwicklung", Selected: false },
   { Name: "Allgemeines", Selected: false },
-  { Name: "Impressum", Selected: false },
 ];
 
 const useStyles = makeStyles((theme) =>
