@@ -44,7 +44,7 @@ const ScrollActivated = () => {
         Untenstehend sind Beispiele für Scroll activated Animationen
       </Typography>
       <br></br>
-      <Typography variant="h6">Einfache Scroll activated Animation</Typography>
+      <Typography variant="h6">Einfache scroll activated Animation</Typography>
       <Card
         className={classes.card}
         variant="outlined"

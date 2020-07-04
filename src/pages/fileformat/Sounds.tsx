@@ -11,6 +11,7 @@ import {
   TableCell,
   TableBody,
 } from "@material-ui/core";
+import TableCard from "../../components/TableCard";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -18,11 +19,6 @@ const useStyles = makeStyles((theme) =>
       padding: 40,
       marginTop: 20,
       display: "flex",
-    },
-    tableCard: {
-      marginTop: 20,
-      marginBottom: 20,
-      overflowX: "auto"
     },
     audio: {
       margin: "auto",
@@ -65,16 +61,13 @@ const Sounds = () => {
   const classes = useStyles();
   return (
     <ContentBox>
-      <Typography variant="h4">Sound formate</Typography>
-      <Typography variant="h5">
-        Untenstehend sind beispiele von Sound formaten zu finden
-      </Typography>
+      <Typography variant="h4">Soundformate</Typography>
       <br />
       <Typography variant="h6">Verfügbare Formate</Typography>
       <Typography variant="body2">
         Im Browser sind drei Sound Formate vefügbar. OGG, MP3 und WAV
       </Typography>
-      <Card className={classes.tableCard}>
+      <TableCard>
         <Table>
           <TableHead>
             <TableRow>
@@ -97,7 +90,7 @@ const Sounds = () => {
             ))}
           </TableBody>
         </Table>
-      </Card>
+      </TableCard>
       <Typography variant="body2">
         Empfehlung 2020: <b>MP3</b> (ausser die Soundqualität muss extrem gut
         sein)

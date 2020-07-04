@@ -10,6 +10,7 @@ import Impressum from "./pages/copyright/Impressum";
 import HtmlCanvas from "./pages/animations/HtmlCanvas";
 import Sounds from "./pages/fileformat/Sounds";
 import StyleGuide from "./pages/concept/StyleGuide";
+import ImageFormat from "./pages/fileformat/ImageFormat";
 
 const ContentBox = styled("div")(({ theme }) => ({
   width: `calc(100% - ${drawerWidth}px)`,
@@ -60,6 +61,12 @@ export const MenuItems: ReadonlyArray<MenuItem> = [
     Selected: false,
     Route: "fileformat",
     SubItems: [
+      {
+        Name: "Bildformate",
+        Selected: false,
+        Route: "image",
+        Component: ImageFormat,
+      },
       {
         Name: "Soundformate",
         Selected: false,
