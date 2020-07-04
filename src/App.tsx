@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) =>
         zIndex: theme.zIndex.modal + 1,
       },
     },
-    homeLink: {
+    link: {
       textDecoration: "none",
       color: theme.palette.primary.contrastText,
       display: "inherit",
@@ -112,7 +112,7 @@ const App = () => {
                 <MenuIcon />
               </IconButton>
             </Hidden>
-            <Link to="/" className={classes.homeLink}>
+            <Link to="/" className={classes.link}>
               <Typography className={classes.title} variant="h6">
                 Modul 152 Showcase
               </Typography>
@@ -128,9 +128,16 @@ const App = () => {
               </IconButton>
             </Hidden>
             <Hidden smDown>
-              <IconButton aria-label="Github Page" color="inherit">
-                <GitHubIcon />
-              </IconButton>
+              <a
+                className={classes.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/SeverinNauer/M152"
+              >
+                <IconButton aria-label="Github Page" color="inherit">
+                  <GitHubIcon />
+                </IconButton>
+              </a>
             </Hidden>
           </Box>
         </Toolbar>
@@ -140,6 +147,7 @@ const App = () => {
         variant={smDown ? "temporary" : "persistent"}
         classes={{ paper: classes.drawerPaper }}
         open={menuIsOpen || !smDown}
+        onBackdropClick={() => setMenuIsOpen(false)}
       >
         <Toolbar />
         <DrawerContent />
