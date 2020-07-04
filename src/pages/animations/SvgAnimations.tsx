@@ -5,7 +5,6 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     card: {
       padding: 40,
-      marginRight: 100,
       marginTop: 20,
     },
     svgContent: {
@@ -22,7 +21,6 @@ const useStyles = makeStyles((theme) =>
 
 const SvgAnimations = () => {
   const classes = useStyles();
-
   return (
     <ContentBox>
       <Typography variant="h4">SVG Animation</Typography>

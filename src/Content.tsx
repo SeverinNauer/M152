@@ -8,6 +8,8 @@ import SvgAnimations from "./pages/animations/SvgAnimations";
 import ScrollActivated from "./pages/animations/SrollActivated";
 import Impressum from "./pages/copyright/Impressum";
 import HtmlCanvas from "./pages/animations/HtmlCanvas";
+import Sounds from "./pages/fileformat/Sounds";
+import StyleGuide from "./pages/concept/StyleGuide";
 
 const ContentBox = styled("div")(({ theme }) => ({
   width: `calc(100% - ${drawerWidth}px)`,
@@ -31,7 +33,12 @@ export const MenuItems: ReadonlyArray<MenuItem> = [
     Route: "concept",
     SubItems: [
       { Name: "Mockup", Selected: false, Route: "mock" },
-      { Name: "Style Guide", Selected: false, Route: "style-guide" },
+      {
+        Name: "Style Guide",
+        Selected: false,
+        Route: "style-guide",
+        Component: StyleGuide,
+      },
       { Name: "Zeitplan", Selected: false, Route: "timeline" },
     ],
   },
@@ -48,7 +55,19 @@ export const MenuItems: ReadonlyArray<MenuItem> = [
       },
     ],
   },
-  { Name: "Dateiformate", Selected: false },
+  {
+    Name: "Dateiformate",
+    Selected: false,
+    Route: "fileformat",
+    SubItems: [
+      {
+        Name: "Soundformate",
+        Selected: false,
+        Route: "sound",
+        Component: Sounds,
+      },
+    ],
+  },
   {
     Name: "Animationen",
     Selected: false,

@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) =>
     },
     card: {
       padding: 40,
-      marginRight: 100,
       marginTop: 20,
     },
     box: {

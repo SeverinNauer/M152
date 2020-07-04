@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     card: {
       padding: 40,
-      marginRight: 100,
       marginTop: 20,
       height: 500,
       overflowY: "auto",

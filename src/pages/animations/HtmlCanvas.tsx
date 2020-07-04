@@ -1,9 +1,11 @@
 import {
-    Card, createStyles, makeStyles, Typography,
-
-
-
-    useTheme
+  Card,
+  createStyles,
+  makeStyles,
+  Typography,
+  useTheme,
+  useMediaQuery,
+  Theme,
 } from "@material-ui/core";
 import React, { useEffect, useRef } from "react";
 import ContentBox from "../../components/ContentBox";
@@ -12,9 +14,9 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     card: {
       padding: 40,
-      marginRight: 100,
       marginTop: 20,
       display: "flex",
+      overflowX: "auto"
     },
     canvas: {
       margin: "0 auto",
@@ -26,6 +28,13 @@ const HtmlCanvas = () => {
   const classes = useStyles();
   const canvas = useRef<HTMLCanvasElement>(null);
   const theme = useTheme();
+
+  const isMobile = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("sm")
+  );
+
+  const canvasSize = isMobile ? 300 : 400;
+
   useEffect(() => {
     const drawClock = (ctx: CanvasRenderingContext2D, radius: number) => {
       ctx.shadowBlur = 3;
@@ -103,13 +112,13 @@ const HtmlCanvas = () => {
     };
     const ctx = canvas.current?.getContext("2d");
     if (ctx) {
-      const halfHeight = (canvas.current?.height ?? 400) / 2;
+      const halfHeight = canvasSize / 2;
       ctx.translate(halfHeight, halfHeight);
       const radius = halfHeight * 0.9;
       const interval = setInterval(() => drawClock(ctx, radius), 1000);
       return () => clearInterval(interval);
     }
-  }, [canvas, theme.palette.grey]);
+  }, [canvas, theme.palette.grey, canvasSize]);
 
   return (
     <ContentBox>
@@ -121,8 +130,8 @@ const HtmlCanvas = () => {
       <Typography variant="h6">HTML Canvas Analog Uhr</Typography>
       <Card className={classes.card} variant="outlined">
         <canvas
-          width="400"
-          height="400"
+          height={canvasSize}
+          width={canvasSize}
           className={classes.canvas}
           ref={canvas}
         ></canvas>

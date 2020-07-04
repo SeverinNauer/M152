@@ -1,7 +1,13 @@
-import React from 'react';
-
+import React from "react";
+import { makeStyles, createStyles } from "@material-ui/core";
+const useStyles = makeStyles((theme) =>
+  createStyles({
+    root: {},
+  })
+);
 const Index = () => {
-  return <div>Welcome</div>;
+  const classes = useStyles();
+  return <div className={classes.root}>Welcome</div>;
 };
 
-export default Index
+export default Index;
