@@ -20,8 +20,10 @@ import { Link } from "react-router-dom";
 import DrawerContent from "./components/DrawerContent";
 import SearchInput from "./components/SearchInput";
 import Content from "./Content";
-import "../src/prism-material-dark.css";
 import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-tsx";
+import "../src/prism-material-dark.css";
 
 const Root = styled("div")({
   height: "100%",

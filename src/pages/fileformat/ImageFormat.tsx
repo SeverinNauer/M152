@@ -12,6 +12,7 @@ import {
 import React from "react";
 import ContentBox from "../../components/ContentBox";
 import TableCard from "../../components/TableCard";
+import CodeExample from "./../../components/CodeExample";
 
 type Format = {
   Abbreviation: string;
@@ -58,7 +59,7 @@ const useStyles = makeStyles((theme) =>
       marginBottom: -10,
       [theme.breakpoints.up("md")]: {
         maxWidth: "60%",
-        margin: "20px auto"
+        margin: "20px auto",
       },
     },
     gifCard: {
@@ -102,6 +103,15 @@ const ImageFormat = () => {
           alt="Meine Aussicht"
         />
       </Card>
+      <CodeExample>
+        {`<Card>
+  <img
+    className={classes.image}
+    src={\`\${process.env.PUBLIC_URL}/assets/fileformats/images/image.jpg\`}
+    alt="Meine Aussicht"
+  />
+</Card>`}
+      </CodeExample>
       <br />
       <Typography variant="h5">PNG einbinden</Typography>
       <Card>
@@ -111,6 +121,15 @@ const ImageFormat = () => {
           alt="Meine Aussicht"
         />
       </Card>
+      <CodeExample>
+        {`<Card>
+  <img
+    className={classes.image}
+    src={\`\${process.env.PUBLIC_URL}/assets/fileformats/images/image.png\`}
+    alt="Meine Aussicht"
+  />
+</Card>`}
+      </CodeExample>
       <br />
       <Typography variant="h5">GIF einbinden</Typography>
       <Card className={classes.gifCard}>
@@ -120,6 +139,15 @@ const ImageFormat = () => {
           alt="Funny Gif"
         />
       </Card>
+      <CodeExample>
+        {`<Card>
+  <img
+    className={classes.image}
+    src={\`\${process.env.PUBLIC_URL}/assets/fileformats/images/trump.gif\`}
+    alt="Funny Gif"
+  />
+</Card>`}
+      </CodeExample>
     </ContentBox>
   );
 };

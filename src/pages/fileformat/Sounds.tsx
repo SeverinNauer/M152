@@ -12,6 +12,7 @@ import {
   TableBody,
 } from "@material-ui/core";
 import TableCard from "../../components/TableCard";
+import CodeExample from "../../components/CodeExample";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -107,6 +108,14 @@ const Sounds = () => {
           />
         </audio>
       </Card>
+      <CodeExample>
+        {`<audio controls>
+  <source
+    src={\`\${process.env.PUBLIC_URL}/assets/fileformats/sound/mp3-demo.mp3\`}
+    type="audio/mpeg"
+  />
+</audio>`}
+      </CodeExample>
     </ContentBox>
   );
 };

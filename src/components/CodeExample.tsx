@@ -27,6 +27,7 @@ const CodeExample: React.FC = (props) => {
 
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
+    console.log(Prism.languages);
     Prism.highlightAll();
   }, []);
 
@@ -47,7 +48,7 @@ const CodeExample: React.FC = (props) => {
       <Collapse in={isOpen}>
         <Card>
           <pre>
-            <code className="language-typescript">{props.children}</code>
+            <code className="language-tsx">{props.children}</code>
           </pre>
         </Card>
       </Collapse>

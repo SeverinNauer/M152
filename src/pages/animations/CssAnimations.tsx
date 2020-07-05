@@ -47,10 +47,13 @@ const CssAnimations = () => {
       <br></br>
       <Typography variant="h6">Einfache CSS Animation</Typography>
       <Card className={classes.card} variant="outlined">
-        <div className={classes.box}></div>
+        <div className={classes.box} />
       </Card>
       <CodeExample>
-        {`const useStyles = makeStyles((theme) =>
+        {`import React from "react";
+import { Card, createStyles, makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) =>
   createStyles({
     "@keyframes spinning": {
       "0%": { marginLeft: "0" },
@@ -68,7 +71,17 @@ const CssAnimations = () => {
       animation: "$spinning 5s linear infinite",
     },
   })
-);`}{" "}
+);
+        
+const CssAnimations = () => {
+  const classes = useStyles();
+
+  return (
+    <Card className={classes.card} variant="outlined">
+      <div className={classes.box}/>
+    </Card>
+  )
+};`}
       </CodeExample>
     </ContentBox>
   );
