@@ -15,8 +15,8 @@ import {
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import MenuIcon from "@material-ui/icons/Menu";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
 import DrawerContent from "./components/DrawerContent";
 import SearchInput from "./components/SearchInput";
 import Content from "./Content";
@@ -100,6 +100,15 @@ const useStyles = makeStyles((theme) =>
 const App = () => {
   const classes = useStyles();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const history = useHistory();
+
+  useEffect(() => {
+    const path = localStorage.getItem("path");
+    if(path){
+      localStorage.removeItem("path");
+      history.push(path);
+    }
+  },[history])
   const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
   return (
     <Root>
