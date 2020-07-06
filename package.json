@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://severinnauer.github.io/M152/",
   "dependencies": {
+    "@fullcalendar/core": "^5.1.0",
     "@fullcalendar/daygrid": "^5.1.0",
     "@fullcalendar/moment": "^5.1.0",
     "@fullcalendar/react": "^5.1.0",
