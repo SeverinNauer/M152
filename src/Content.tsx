@@ -13,6 +13,7 @@ import StyleGuide from "./pages/concept/StyleGuide";
 import ImageFormat from "./pages/fileformat/ImageFormat";
 import Timeline from "./pages/concept/Timeline";
 import Video from "./pages/fileformat/Video";
+import ReactAnimations from "./pages/animations/ReactAnimations";
 
 const ContentBox = styled("div")(({ theme }) => ({
   width: `calc(100% - ${drawerWidth}px)`,
@@ -116,6 +117,12 @@ export const MenuItems: ReadonlyArray<MenuItem> = [
         Selected: false,
         Route: "canvas",
         Component: HtmlCanvas,
+      },
+      {
+        Name: "React Animation",
+        Selected: false,
+        Route: "react",
+        Component: ReactAnimations,
       },
     ],
   },
