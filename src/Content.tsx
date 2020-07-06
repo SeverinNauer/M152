@@ -12,6 +12,7 @@ import Sounds from "./pages/fileformat/Sounds";
 import StyleGuide from "./pages/concept/StyleGuide";
 import ImageFormat from "./pages/fileformat/ImageFormat";
 import Timeline from "./pages/concept/Timeline";
+import Video from "./pages/fileformat/Video";
 
 const ContentBox = styled("div")(({ theme }) => ({
   width: `calc(100% - ${drawerWidth}px)`,
@@ -67,6 +68,12 @@ export const MenuItems: ReadonlyArray<MenuItem> = [
     Selected: false,
     Route: "fileformat",
     SubItems: [
+      {
+        Name: "Videoformate",
+        Selected: false,
+        Route: "video",
+        Component: Video,
+      },
       {
         Name: "Bildformate",
         Selected: false,
