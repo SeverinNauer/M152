@@ -20,7 +20,7 @@ const Video = () => {
   const classes = useStyles();
   return (
     <ContentBox>
-      <Typography variant="h4">Soundformate</Typography>
+      <Typography variant="h4">Videoformate</Typography>
       <br />
       <Typography variant="h6">MP4 Video</Typography>
       <Card className={classes.card}>

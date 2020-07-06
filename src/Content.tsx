@@ -129,7 +129,6 @@ export const MenuItems: ReadonlyArray<MenuItem> = [
   { Name: "Automatisierung", Selected: false },
   { Name: "Testen", Selected: false },
   { Name: "Eigene Entwicklung", Selected: false },
-  { Name: "Allgemeines", Selected: false },
 ];
 
 const Content = () => {

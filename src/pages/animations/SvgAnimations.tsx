@@ -28,6 +28,7 @@ const SvgAnimations = () => {
       <Typography variant="h5">
         Untenstehend sind Beispiele für SVG Animationen zu finden
       </Typography>
+      <br />
       <Typography variant="h6">Einfache SVG Animation</Typography>
       <Card className={classes.card} variant="outlined">
         <svg className={classes.svgContent}>
