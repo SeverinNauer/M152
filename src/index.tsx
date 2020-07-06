@@ -20,7 +20,7 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/M152">
       <ThemeProvider theme={theme}>
         <App />
       </ThemeProvider>
