@@ -1,5 +1,5 @@
+import { Link, Typography } from "@material-ui/core";
 import React from "react";
-import { makeStyles, createStyles, Typography, Link } from "@material-ui/core";
 import ContentBox from "../components/ContentBox";
 
 const Index = () => {
