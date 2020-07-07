@@ -15,6 +15,7 @@ import Timeline from "./pages/concept/Timeline";
 import Video from "./pages/fileformat/Video";
 import ReactAnimations from "./pages/animations/ReactAnimations";
 import License from "./pages/copyright/License";
+import CarouselPage from "./pages/automate/CarouselPage";
 
 const ContentBox = styled("div")(({ theme }) => ({
   width: `calc(100% - ${drawerWidth}px)`,
@@ -133,7 +134,19 @@ export const MenuItems: ReadonlyArray<MenuItem> = [
       },
     ],
   },
-  { Name: "Automatisierung", Selected: false },
+  {
+    Name: "Automatisierung",
+    Selected: false,
+    Route: "auto",
+    SubItems: [
+      {
+        Name: "Slideshow",
+        Selected: false,
+        Route: "carousel",
+        Component: CarouselPage,
+      },
+    ],
+  },
   { Name: "Testen", Selected: false },
   { Name: "Eigene Entwicklung", Selected: false },
 ];
