@@ -22,7 +22,11 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
-const DrawerContent = () => {
+interface IProps{
+  onItemClick: () => void;
+}
+
+const DrawerContent = (props: IProps) => {
   const classes = useStyles();
   const [menuItems, setMenuItems] = useState(MenuItems);
   const history = useHistory();
@@ -91,6 +95,7 @@ const DrawerContent = () => {
                       primary={subItem.Name}
                       className={classes.nested}
                       to={`/${item.Route}/${subItem.Route}`}
+                      onClick={() => props.onItemClick()}
                     />
                   ))}
                 </List>

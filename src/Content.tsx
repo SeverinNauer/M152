@@ -17,6 +17,7 @@ import Sounds from "./pages/fileformat/Sounds";
 import Video from "./pages/fileformat/Video";
 import Index from "./pages/Index";
 import Mockup from "./pages/concept/Mockup";
+import Retrospective from "./pages/learning/Retrospective";
 
 const ContentBox = styled("div")(({ theme }) => ({
   width: `calc(100% - ${drawerWidth}px)`,
@@ -149,7 +150,19 @@ export const MenuItems: ReadonlyArray<MenuItem> = [
     ],
   },
   { Name: "Testen", Selected: false },
-  { Name: "Eigene Entwicklung", Selected: false },
+  {
+    Name: "Eigene Entwicklung",
+    Selected: false,
+    Route: "learning",
+    SubItems: [
+      {
+        Name: "Reflexion",
+        Selected: false,
+        Route: "retrospective",
+        Component: Retrospective,
+      },
+    ],
+  },
 ];
 
 const Content = () => {

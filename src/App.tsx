@@ -150,7 +150,7 @@ const App = () => {
       >
         <Toolbar />
         <Suspense fallback={<p>loading</p>}>
-          <DrawerContent />
+          <DrawerContent onItemClick={() => setMenuIsOpen(false)} />
         </Suspense>
       </Drawer>
       <Suspense fallback={<p>loading</p>}>

@@ -84,7 +84,7 @@ const Index = () => {
         className={classes.bottom}
         spacing={2}
       >
-        <Grid item xs={11} md={6}>
+        <Grid item xs={12} md={6}>
           <Card className={classes.card} variant="outlined">
             <Typography variant="h5">Navigation</Typography>
             <br />
