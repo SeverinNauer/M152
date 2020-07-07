@@ -10,8 +10,9 @@ const useStyles = makeStyles((theme) =>
       marginTop: 20,
       display: "flex",
     },
-    audio: {
-      margin: "auto",
+    video: {
+      height: "auto",
+      width: "100%",
     },
   })
 );
@@ -24,7 +25,7 @@ const Video = () => {
       <br />
       <Typography variant="h6">MP4 Video</Typography>
       <Card className={classes.card}>
-        <video controls>
+        <video controls className={classes.video}>
           <source
             src={`${process.env.PUBLIC_URL}/assets/fileformats/videos/Flickshot.mp4`}
             type="video/mp4"
