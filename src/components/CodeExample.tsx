@@ -9,6 +9,9 @@ import {
 import CodeIcon from "@material-ui/icons/Code";
 import Prism from "prismjs";
 import React, { useEffect, useState } from "react";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-tsx";
 
 const useStyles = makeStyles((theme) =>
   createStyles({

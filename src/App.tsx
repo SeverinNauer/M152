@@ -12,18 +12,14 @@ import {
   Typography,
   useMediaQuery,
 } from "@material-ui/core";
-import Brightness4Icon from "@material-ui/icons/Brightness4";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import MenuIcon from "@material-ui/icons/Menu";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import { Link, useHistory } from "react-router-dom";
-import DrawerContent from "./components/DrawerContent";
-import SearchInput from "./components/SearchInput";
-import Content from "./Content";
-import "prismjs/components/prism-typescript";
-import "prismjs/components/prism-jsx";
-import "prismjs/components/prism-tsx";
 import "../src/prism-material-dark.css";
+
+const Content = lazy(() => import("./Content"));
+const DrawerContent = lazy(() => import("./components/DrawerContent"));
 
 const Root = styled("div")({
   height: "100%",
@@ -153,9 +149,13 @@ const App = () => {
         onBackdropClick={() => setMenuIsOpen(false)}
       >
         <Toolbar />
-        <DrawerContent />
+        <Suspense fallback={<p>loading</p>}>
+          <DrawerContent />
+        </Suspense>
       </Drawer>
-      <Content />
+      <Suspense fallback={<p>loading</p>}>
+        <Content />
+      </Suspense>
     </Root>
   );
 };

@@ -2,20 +2,20 @@ import { styled, Toolbar } from "@material-ui/core";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { drawerWidth } from "./App";
-import Index from "./pages/Index";
 import CssAnimations from "./pages/animations/CssAnimations";
-import SvgAnimations from "./pages/animations/SvgAnimations";
-import ScrollActivated from "./pages/animations/SrollActivated";
-import Impressum from "./pages/copyright/Impressum";
 import HtmlCanvas from "./pages/animations/HtmlCanvas";
-import Sounds from "./pages/fileformat/Sounds";
-import StyleGuide from "./pages/concept/StyleGuide";
-import ImageFormat from "./pages/fileformat/ImageFormat";
-import Timeline from "./pages/concept/Timeline";
-import Video from "./pages/fileformat/Video";
 import ReactAnimations from "./pages/animations/ReactAnimations";
-import License from "./pages/copyright/License";
+import ScrollActivated from "./pages/animations/SrollActivated";
+import SvgAnimations from "./pages/animations/SvgAnimations";
 import CarouselPage from "./pages/automate/CarouselPage";
+import StyleGuide from "./pages/concept/StyleGuide";
+import Timeline from "./pages/concept/Timeline";
+import Impressum from "./pages/copyright/Impressum";
+import License from "./pages/copyright/License";
+import ImageFormat from "./pages/fileformat/ImageFormat";
+import Sounds from "./pages/fileformat/Sounds";
+import Video from "./pages/fileformat/Video";
+import Index from "./pages/Index";
 
 const ContentBox = styled("div")(({ theme }) => ({
   width: `calc(100% - ${drawerWidth}px)`,
