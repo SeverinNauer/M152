@@ -70,7 +70,7 @@ export const MenuItems: ReadonlyArray<MenuItem> = [
         Component: License,
       },
       {
-        Name: "Impressum",
+        Name: "Impressum & Copyright",
         Selected: false,
         Route: "impressum",
         Component: Impressum,
