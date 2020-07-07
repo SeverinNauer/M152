@@ -94,8 +94,8 @@ const Testing = () => {
       </Typography>
       <br />
       <Grid container spacing={2}>
-        {Tests.map((test) => (
-          <Grid item xs={12} lg={6}>
+        {Tests.map((test, index) => (
+          <Grid item xs={12} lg={6} key={index}>
             <Typography variant="h5">{test.Title}</Typography>
             <br />
             <Card>

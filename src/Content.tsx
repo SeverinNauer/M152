@@ -19,6 +19,7 @@ import Index from "./pages/Index";
 import Mockup from "./pages/concept/Mockup";
 import Retrospective from "./pages/learning/Retrospective";
 import Testing from "./pages/testing/Testing";
+import Browser from "./pages/testing/Browser";
 
 const ContentBox = styled("div")(({ theme }) => ({
   width: `calc(100% - ${drawerWidth}px)`,
@@ -160,6 +161,12 @@ export const MenuItems: ReadonlyArray<MenuItem> = [
         Selected: false,
         Route: "mobile-desktop",
         Component: Testing,
+      },
+      {
+        Name: "Browser Kompatibilität",
+        Selected: false,
+        Route: "compatibility",
+        Component: Browser,
       },
     ],
   },
