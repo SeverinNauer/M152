@@ -96,6 +96,11 @@ const ImageFormat = () => {
         </Table>
       </TableCard>
       <Typography variant="h5">JPEG einbinden</Typography>
+      <Typography variant="body1">
+        Die Komprimierung von JPEG ist verlustreich. Daher ist Dateigrösse
+        kleiner als bei PNG Dateien. Dieses format sollte also verwendet werden,
+        wenn Dateigrösse ein wichtiger Faktor ist.
+      </Typography>
       <Card>
         <img
           className={classes.image}
@@ -114,6 +119,12 @@ const ImageFormat = () => {
       </CodeExample>
       <br />
       <Typography variant="h5">PNG einbinden</Typography>
+      <Typography variant="body1">
+        Ein grosser Vorteil von PNG ist die Unterstützung von Transparenz.
+        Zusätzlich ist die Komprimierung von PNG verlustfrei, was zwar zu guter
+        Qualität aber zu hoher Dateigrössen führt. Es eignet sich gut für
+        Grafiken und Icons.
+      </Typography>
       <Card>
         <img
           className={classes.image}
@@ -132,19 +143,26 @@ const ImageFormat = () => {
       </CodeExample>
       <br />
       <Typography variant="h5">GIF einbinden</Typography>
+      <Typography variant="body1">
+        Gifs ermöglichen das Einbinden von animierten Bildern. Sie werden recht
+        stark komprimiert und haben daher eine recht geringe Dateigrösse. Gifs
+        unterstützen aber nur einen kleinen Farbbereich und sind daher für
+        Bilder ungeignet. Sie sollten vorallem für animierte Bilder verwendet
+        werden.
+      </Typography>
       <Card className={classes.gifCard}>
         <img
           className={classes.gif}
-          src={`${process.env.PUBLIC_URL}/assets/fileformats/images/trump.gif`}
-          alt="Funny Gif"
+          src={`${process.env.PUBLIC_URL}/assets/fileformats/images/hello.gif`}
+          alt="Hello Gif"
         />
       </Card>
       <CodeExample>
         {`<Card>
   <img
     className={classes.image}
-    src={\`\${process.env.PUBLIC_URL}/assets/fileformats/images/trump.gif\`}
-    alt="Funny Gif"
+    src={\`\${process.env.PUBLIC_URL}/assets/fileformats/images/Hello.gif\`}
+    alt="Hello Gif"
   />
 </Card>`}
       </CodeExample>

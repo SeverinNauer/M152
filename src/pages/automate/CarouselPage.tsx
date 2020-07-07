@@ -1,15 +1,17 @@
 import React from "react";
 import ContentBox from "../../components/ContentBox";
-import { Typography, Card, Link } from "@material-ui/core";
+import {
+  Typography,
+  Card,
+  Link,
+  ListItem,
+  ListItemText,
+  List,
+} from "@material-ui/core";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import CodeExample from "../../components/CodeExample";
-//https://pixabay.com/de/photos/landschaft-berge-panorama-4587079/
-//https://pixabay.com/de/photos/hund-tier-h%C3%BCndchen-niedlich-jung-5357794/
-//https://pixabay.com/de/photos/b%C3%A4ume-wald-sommer-griechenland-5350721/
-//https://pixabay.com/de/photos/v%C3%B6gel-im-flug-g%C3%A4nse-vogel-tier-5366034/
-//https://pixabay.com/de/photos/kornblumen-sonnenuntergang-m%C3%BCcken-5352633/
-//https://pixabay.com/de/photos/wildbach-fluss-wasser-landschaft-5360379/
+
 
 //TODO Quellenangabe
 interface IImage {
@@ -112,6 +114,45 @@ const CarouselPage = () => {
   );
 };
       `}</CodeExample>
+
+
+      <Typography variant="h6">Copyright</Typography>
+      <Typography variant="body1">
+        Für die Slideshow wurden lediglich Copyright ungeschützte Bilder
+        verwendet. Die links für diese werden unterhalb aufgelistet
+      </Typography>
+      <List dense>
+        <ListItem>
+          <ListItemText>
+            <Link href="https://pixabay.com/de/photos/landschaft-berge-panorama-4587079/">Bild 1</Link>
+          </ListItemText>
+        </ListItem>
+        <ListItem>
+          <ListItemText>
+            <Link href="https://pixabay.com/de/photos/hund-tier-h%C3%BCndchen-niedlich-jung-5357794/">Bild 2</Link>
+          </ListItemText>
+        </ListItem>
+        <ListItem>
+          <ListItemText>
+            <Link href="https://pixabay.com/de/photos/b%C3%A4ume-wald-sommer-griechenland-5350721/">Bild 3</Link>
+          </ListItemText>
+        </ListItem>
+        <ListItem>
+          <ListItemText>
+            <Link href="https://pixabay.com/de/photos/v%C3%B6gel-im-flug-g%C3%A4nse-vogel-tier-5366034/">Bild 4</Link>
+          </ListItemText>
+        </ListItem>
+        <ListItem>
+          <ListItemText>
+            <Link href="https://pixabay.com/de/photos/kornblumen-sonnenuntergang-m%C3%BCcken-5352633/">Bild 5</Link>
+          </ListItemText>
+        </ListItem>
+        <ListItem>
+          <ListItemText>
+            <Link href="https://pixabay.com/de/photos/wildbach-fluss-wasser-landschaft-5360379/">Bild 6</Link>
+          </ListItemText>
+        </ListItem>
+      </List>
     </ContentBox>
   );
 };

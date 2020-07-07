@@ -137,6 +137,17 @@ const events: EventInput[] = [
     start: new Date(2020, 6, 6, 19, 30),
     end: new Date(2020, 6, 6, 20, 0),
   },
+  //07.Juli
+  {
+    title: "Letzte Anpassungen",
+    start: new Date(2020, 6, 7, 19, 0),
+    end: new Date(2020, 6, 7, 22, 0),
+  },
+  {
+    title: "Hochladen",
+    start: new Date(2020, 6, 7, 22, 0),
+    end: new Date(2020, 6, 7, 22, 30),
+  },
 ];
 const useStyles = makeStyles((theme) =>
   createStyles({
