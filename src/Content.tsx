@@ -20,6 +20,7 @@ import Mockup from "./pages/concept/Mockup";
 import Retrospective from "./pages/learning/Retrospective";
 import Testing from "./pages/testing/Testing";
 import Browser from "./pages/testing/Browser";
+import PageSpeed from "./pages/testing/PageSpeed";
 
 const ContentBox = styled("div")(({ theme }) => ({
   width: `calc(100% - ${drawerWidth}px)`,
@@ -167,6 +168,12 @@ export const MenuItems: ReadonlyArray<MenuItem> = [
         Selected: false,
         Route: "compatibility",
         Component: Browser,
+      },
+      {
+        Name: "Pagespeed",
+        Selected: false,
+        Route: "pagespeed",
+        Component: PageSpeed,
       },
     ],
   },
