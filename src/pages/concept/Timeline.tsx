@@ -24,11 +24,6 @@ const events: EventInput[] = [
     start: new Date(2020, 4, 15, 14, 30),
     end: new Date(2020, 4, 15, 16, 30),
   },
-  {
-    title: "Mockup erstellen",
-    start: new Date(2020, 4, 15, 14, 30),
-    end: new Date(2020, 4, 15, 16, 30),
-  },
   //29.Mai
   {
     title: "Input Urheberrecht",

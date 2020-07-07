@@ -16,6 +16,7 @@ import ImageFormat from "./pages/fileformat/ImageFormat";
 import Sounds from "./pages/fileformat/Sounds";
 import Video from "./pages/fileformat/Video";
 import Index from "./pages/Index";
+import Mockup from "./pages/concept/Mockup";
 
 const ContentBox = styled("div")(({ theme }) => ({
   width: `calc(100% - ${drawerWidth}px)`,
@@ -38,7 +39,7 @@ export const MenuItems: ReadonlyArray<MenuItem> = [
     Selected: false,
     Route: "concept",
     SubItems: [
-      { Name: "Mockup", Selected: false, Route: "mock" },
+      { Name: "Mockup", Selected: false, Route: "mock", Component: Mockup },
       {
         Name: "Style Guide",
         Selected: false,
