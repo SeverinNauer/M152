@@ -11,6 +11,7 @@ import CodeExample from "../../components/CodeExample";
 //https://pixabay.com/de/photos/kornblumen-sonnenuntergang-m%C3%BCcken-5352633/
 //https://pixabay.com/de/photos/wildbach-fluss-wasser-landschaft-5360379/
 
+//TODO Quellenangabe
 interface IImage {
   name: string;
   alt: string;

@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) =>
     },
     text: {
       margin: "auto",
-      color: theme.palette.primary.contrastText
+      color: theme.palette.primary.contrastText,
     },
   })
 );
@@ -65,7 +65,7 @@ const StyleGuide = () => {
         von dem Material UI theme Verwendet
       </Typography>
 
-      <Card className={classes.card}>
+      <Card className={classes.card} variant="outlined">
         <Typography variant="h1" component="h2" gutterBottom>
           h1. Heading
         </Typography>
@@ -115,13 +115,30 @@ const StyleGuide = () => {
         </Typography>
       </Card>
       <br />
+      <Typography variant="h5">Logo</Typography>
+      <Typography variant="subtitle1">
+        Das Logo wurde mit dem{" "}
+        <Link href="https://www.tailorbrands.com/de/logo-maker">
+          Tailorbrand Logo Generator
+        </Link>{" "}
+        erzeugt
+      </Typography>
+      <Card className={classes.card}>
+        <img
+          src={`${process.env.PUBLIC_URL}/assets/logo/logoM152.png`}
+          alt="logo"
+        />
+      </Card>
+      <br />
       <Typography variant="h5">Farbpalette</Typography>
       <Typography variant="h6">Primärfarbe</Typography>
-      <Card className={classes.card}>
+      <Card className={classes.card} variant="outlined">
         <Typography variant="subtitle1">Main</Typography>
         <br />
         <div className={classes.mainColor}>
-          <Typography variant="body1" className={classes.text}>{theme.palette.primary.main}</Typography>
+          <Typography variant="body1" className={classes.text}>
+            {theme.palette.primary.main}
+          </Typography>
         </div>
       </Card>
     </ContentBox>
