@@ -45,7 +45,21 @@ const Retrospective = () => {
         denke kaum, dass ich in naher Zukunft wieder einmal damit arbeiten
         werden. Ich glaube für Einsatzmöglichkeiten, in denen man HTML Canvas
         verwenden könnte, wäre es auch möglich SVG Grafiken in Verbindung mit
-        JavaScript zu benutzen. Das wäre wahrscheinlich oft die bessere Option. 
+        JavaScript zu benutzen. Das wäre wahrscheinlich oft die bessere Option.
+      </Typography>
+      <br />
+      <Typography variant="h5">Meinung zum Modul</Typography>
+      <Typography variant="body1">
+        Mir hat das Modul grundsätzlich gefallen, da ich mich für einmal darauf
+        konzentrieren konnte etwas zu designen. Ich glaube aber dass das
+        Kompetenzraster zu gross war und dass einige Punkte davon ziemlich
+        sinnlos waren. Ich glaube es wäre besser gewesen vertieft in gewisse
+        Aspekte einzutauchen und für diese Komplexere Beispiele zu erarbeiten.
+        Gewisse Punkte wurden schlecht definiert und man hatte keine Ahnung was
+        für diesen Punkt erwartet wird (Testing). Punkte wie "Videoformate"
+        einbinden finde ich etwas unnötig, da es doch jedem Informatik Lehrling
+        im dritten Lehrjahr möglich sein sollte, ein "video" Tag im HTML
+        einzubinden.
       </Typography>
     </ContentBox>
   );
