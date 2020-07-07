@@ -18,6 +18,7 @@ import Video from "./pages/fileformat/Video";
 import Index from "./pages/Index";
 import Mockup from "./pages/concept/Mockup";
 import Retrospective from "./pages/learning/Retrospective";
+import Testing from "./pages/testing/Testing";
 
 const ContentBox = styled("div")(({ theme }) => ({
   width: `calc(100% - ${drawerWidth}px)`,
@@ -149,7 +150,19 @@ export const MenuItems: ReadonlyArray<MenuItem> = [
       },
     ],
   },
-  { Name: "Testen", Selected: false },
+  {
+    Name: "Testen",
+    Selected: false,
+    Route: "test",
+    SubItems: [
+      {
+        Name: "Mobile & Desktop",
+        Selected: false,
+        Route: "mobile-desktop",
+        Component: Testing,
+      },
+    ],
+  },
   {
     Name: "Eigene Entwicklung",
     Selected: false,

@@ -89,7 +89,7 @@ const Index = () => {
             <Typography variant="h5">Navigation</Typography>
             <br />
             <Typography variant="body1">
-              Auf der Linken seite sind sind die Punkte des Kompetenzrasters
+              Auf der linken Seite sind sind die Punkte des Kompetenzrasters
               aufgereit. Diese verweisen auf die Seiten zu den jeweiligen
               Punkte.
               <br /> Die Seiten beinhalten Beschreibungen oder Beispiele zu den
