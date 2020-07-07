@@ -104,11 +104,11 @@ const App = () => {
 
   useEffect(() => {
     const path = localStorage.getItem("path");
-    if(path){
+    if (path) {
       localStorage.removeItem("path");
       history.push(path);
     }
-  },[history])
+  }, [history]);
   const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
   return (
     <Root>
@@ -132,26 +132,16 @@ const App = () => {
             </Link>
           </Box>
           <Box>
-            <Hidden smDown>
-              <SearchInput />
-            </Hidden>
-            <Hidden smDown>
-              <IconButton aria-label="Set Dark Mode" color="inherit">
-                <Brightness4Icon />
+            <a
+              className={classes.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/SeverinNauer/M152"
+            >
+              <IconButton aria-label="Github Page" color="inherit">
+                <GitHubIcon />
               </IconButton>
-            </Hidden>
-            <Hidden smDown>
-              <a
-                className={classes.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/SeverinNauer/M152"
-              >
-                <IconButton aria-label="Github Page" color="inherit">
-                  <GitHubIcon />
-                </IconButton>
-              </a>
-            </Hidden>
+            </a>
           </Box>
         </Toolbar>
       </AppBar>
